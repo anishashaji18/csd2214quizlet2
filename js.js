@@ -1,15 +1,12 @@
 function  waitingfn(timeinms){
-    const futuretime  =  date.now() +timeinms;
-    while (futuretime > date.now()){
+    const futuretime  =  Date.now() +timeinms;
+    while (futuretime > Date.now()){
     
     }
-
+//waiting 
 
 
  }
-
-
-
  waitingfn(3000)
 
  debugger;
