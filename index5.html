@@ -11,11 +11,17 @@ function init()
 stage = new createjs.Stage("stage-canvas");
 sunShape = new createjs.Shape();
 sunShape.graphics.beginFill("#F00");
-sunShape.graphics.drawCircle(100, 5, 25);
+sunShape.graphics.drawCircle(0, 0, 25);
 sunShape.graphics.endFill();
 sunShape.x = 25;
 sunShape.y = 25;
 stage.addChild(sunShape);
+createjs.Tween.get(sunShape, {loop:true})
+.to({x:525, y:375}, 3000);
+createjs.Ticker.addEventListener("tick", tickHandler);
+}
+function tickHandler(e)
+{
 stage.update();
 }
 </script>
@@ -39,5 +45,9 @@ padding-right: 0;
 <canvas id="stage-canvas" width="550" height="400">
 This web browser does not support canvas.
 </canvas>
+
+<button onclick="console.log('button was just clicked');"> 
+    let the race began 
+</button>
 </body>
 </html>
